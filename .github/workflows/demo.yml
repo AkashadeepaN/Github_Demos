@@ -1,0 +1,26 @@
+name: Demo Workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome message
+        run: echo "Welcome! This workflow was triggered by a push to main or manually."
+
+      - name: Current working directory
+        run: pwd
+
+      - name: List the directory
+        run: ls -la
+
+      - name: Create a sample file
+        run: echo "Hello from GitHub Actions!" > sample.txt
+
+      - name: Display the file content
+        run: cat sample.txt
