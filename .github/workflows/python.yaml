@@ -1,0 +1,32 @@
+name: Run Python Programs
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  run-python-programs:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+
+      - name: Run Palindrome Program
+        run: python palindrome.py
+
+      - name: Run Reverse Words Program
+        run: python reverse_words.py
+
+      - name: Run HCF and LCM Program
+        run: python hcf_lcm.py
