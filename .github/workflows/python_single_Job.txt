@@ -1,4 +1,4 @@
-name: Run Python Programs
+name: Run Python Programs using one Jobs
 
 on:
   push:
